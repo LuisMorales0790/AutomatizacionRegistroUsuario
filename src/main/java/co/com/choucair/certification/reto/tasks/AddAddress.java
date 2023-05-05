@@ -17,16 +17,18 @@ public class AddAddress implements Task {
 
     private String strCity;
     private String strPostalCode;
+    private String strCountry;
 
 
-    public AddAddress(String strCity, String strPostalCode) {
+    public AddAddress(String strCity, String strPostalCode, String strCountry) {
         this.strCity = strCity;
         this.strPostalCode = strPostalCode;
+        this.strCountry = strCountry;
     }
 
-    public static AddAddress addYourAddress(String strCity, String strPostalCode) {
+    public static AddAddress addYourAddress(String strCity, String strPostalCode, String strCountry) {
 
-        return Tasks.instrumented(AddAddress.class, strCity, strPostalCode);
+        return Tasks.instrumented(AddAddress.class, strCity, strPostalCode, strCountry);
     }
 
     @Override
@@ -38,9 +40,9 @@ public class AddAddress implements Task {
 
                 Enter.theValue(strPostalCode).into(UtestAddAddress.INPUT_POSTAL_CODE),
 
-                Click.on(UtestAddAddress.SELECT_COUNTRY_1),
-                WaitUntil.the(UtestAddAddress.SELECT_COUNTRY_2, isVisible()),
-                MoveMouse.to(UtestAddAddress.SELECT_COUNTRY_2).andThen(actions -> actions.click()),
+                 Click.on(UtestAddAddress.SELECT_COUNTRY_1),
+                 Click.on(UtestAddAddress.SELECT_COUNTRY_2),
+                 Enter.theValue(strCountry).into(UtestAddAddress.SELECT_COUNTRY_2),
 
                 Click.on(UtestAddAddress.ENTER_BUTTON)
         );

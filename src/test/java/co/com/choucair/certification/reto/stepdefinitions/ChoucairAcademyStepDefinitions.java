@@ -28,9 +28,9 @@ public class ChoucairAcademyStepDefinitions {
 
     @When("^you access the utest page$")
     public void youAccessTheUtestPage(List<UtestData> utestData) throws Exception{
-        OnStage.theActorInTheSpotlight().attemptsTo(JoinToday.onThePage(utestData.get(0).getStrFirstName(), utestData.get(0).getStrLastName(), utestData.get(0).getStrEmailAddress(), utestData.get(0).getStrMonthBirth(), utestData.get(0).getIntDayBirth(), utestData.get(0).getIntYearBirth()),
-              AddAddress.addYourAddress(utestData.get(0).getStrCity(), utestData.get(0).getStrPostalCode()),
-                Devices.yourDevices(),
+        OnStage.theActorInTheSpotlight().attemptsTo(JoinToday.onThePage(utestData.get(0).getStrFirstName(), utestData.get(0).getStrLastName(), utestData.get(0).getStrEmailAddress(), utestData.get(0).getStrMonthBirth(), utestData.get(0).getIntDayBirth(), utestData.get(0).getIntYearBirth(), utestData.get(0).getStrLangSpoken()),
+              AddAddress.addYourAddress(utestData.get(0).getStrCity(), utestData.get(0).getStrPostalCode(), utestData.get(0).getStrCountry()),
+                Devices.yourDevices(utestData.get(0).getStrComputer(), utestData.get(0).getStrVersion(), utestData.get(0).getStrLanguage(), utestData.get(0).getStrMobile(), utestData.get(0).getStrModel(), utestData.get(0).getStrOS()),
                 LastSep.theLastStep(utestData.get(0).getStrPassword(), utestData.get(0).getStrConfirmPassword())
         );
 

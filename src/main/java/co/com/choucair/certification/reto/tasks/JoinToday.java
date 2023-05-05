@@ -8,6 +8,7 @@ import net.serenitybdd.screenplay.Task;
 import net.serenitybdd.screenplay.Tasks;
 import net.serenitybdd.screenplay.actions.*;
 import net.serenitybdd.screenplay.waits.WaitUntil;
+import org.openqa.selenium.Keys;
 
 import static net.serenitybdd.screenplay.matchers.WebElementStateMatchers.isVisible;
 
@@ -19,19 +20,21 @@ public class JoinToday implements Task {
     private String strMonthBirth;
     private int intDayBirth;
     private int intYearBirth;
+    private String strLangSpoken;
 
-    public JoinToday(String strFirstName, String strLastName, String strEmailAddress, String strMonthBirth, int intDayBirth, int intYearBirth) {
+    public JoinToday(String strFirstName, String strLastName, String strEmailAddress, String strMonthBirth, int intDayBirth, int intYearBirth, String strLangSpoken) {
         this.strFirstName = strFirstName;
         this.strLastName = strLastName;
         this.strEmailAddress = strEmailAddress;
         this.strMonthBirth = strMonthBirth;
         this.intDayBirth = intDayBirth;
         this.intYearBirth = intYearBirth;
+        this.strLangSpoken = strLangSpoken;
     }
 
-    public static JoinToday onThePage(String strFirstName, String strLastName, String strEmailAddress, String strMonthBirth, int intDayBirth, int intYearBirth){
+    public static JoinToday onThePage(String strFirstName, String strLastName, String strEmailAddress, String strMonthBirth, int intDayBirth, int intYearBirth, String strLangSpoken){
 
-        return Tasks.instrumented(JoinToday.class,strFirstName, strLastName, strEmailAddress, strMonthBirth, intDayBirth, intYearBirth);
+        return Tasks.instrumented(JoinToday.class,strFirstName, strLastName, strEmailAddress, strMonthBirth, intDayBirth, intYearBirth, strLangSpoken);
     }
 
     @Override
@@ -44,9 +47,10 @@ public class JoinToday implements Task {
                 SelectFromOptions.byVisibleText(String.valueOf(intDayBirth)).from(UtestRegisterPage.SELECT_BIRTH_DAY),
                 SelectFromOptions.byVisibleText(String.valueOf(intYearBirth)).from(UtestRegisterPage.SELECT_BIRTH_YEAR),
                 Scroll.to(UtestRegisterPage.ENTER_BUTTON),
-                Click.on(UtestRegisterPage.SELECT_LANGUAGE_1),
-                WaitUntil.the(UtestDevices.SELECT_LANGUAGE_2, isVisible()),
-                MoveMouse.to(UtestRegisterPage.SELECT_LANGUAGE_2).andThen(actions -> actions.click()),
+
+                Click.on(UtestRegisterPage.SELECT_LANGUAGE_SPOKEN_1),
+                Enter.theValue(strLangSpoken).into(UtestRegisterPage.SELECT_LANGUAGE_SPOKEN_2),
+                Hit.the(Keys.ENTER).into(UtestRegisterPage.SELECT_LANGUAGE_SPOKEN_2),
 
                 Click.on(UtestRegisterPage.ENTER_BUTTON)
         );

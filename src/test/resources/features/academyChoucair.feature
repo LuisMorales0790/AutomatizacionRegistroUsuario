@@ -8,8 +8,8 @@ Feature: Utest Page
 
 
     When you access the utest page
-      | strFirstName | strLastName| strEmailAddress        | strMonthBirth | intDayBirth | intYearBirth | strCity    | strPostalCode | strPassword   | strConfirmPassword |
-      | Frederick    | Starck     | doctorstarck@gmail.com  | April         |      6      |      1992    |  Las Lomas |      507      | Choucair2023* | Choucair2023* |
+      | strFirstName | strLastName| strEmailAddress     | strMonthBirth | intDayBirth | intYearBirth | strLangSpoken | strCity    | strPostalCode | strCountry | strComputer | strVersion | strLanguage | strMobile  | strModel |  strOS        | strPassword    | strConfirmPassword |
+      | Frederick    | Starck     | ricstarck@gmail.com | April         |      6      |      1992    |    Italian    |  Las Lomas |      507      | Panama     | Linux       | Debian     | English     | Xiaomi     |  Mi5     |  Android 6    |  Choucair2023* | Choucair2023*      |
 
     Then create a new user on the utest page
       |  strMessage                           |

@@ -19,8 +19,11 @@ public class UtestRegisterPage extends PageObject {
 
     public static final Target SELECT_BIRTH_YEAR = Target.the("where do we write the Birth Year").located(By.cssSelector("select#birthYear"));
 
-    public static final Target SELECT_LANGUAGE_1 = Target.the("select a language").located(By.id("languages"));
-    public static final Target SELECT_LANGUAGE_2 = Target.the("select a language").located(By.xpath("//div[contains(text(),'Italian')]"));
+    public static final Target SELECT_LANGUAGE_SPOKEN_1 = Target.the("select a language").located(By.id("languages"));
+    public static final Target SELECT_LANGUAGE_SPOKEN_2 = Target.the("select a language").located(By.xpath("//div[@id='languages']//input[@aria-label='Select box']"));
+
+    //public static final Target SELECT_LANGUAGE_SPOKEN_2 = Target.the("select a language").located(By.xpath("//div[contains(text(),'Italian')]"));
+
 
     public static final Target ENTER_BUTTON = Target.the("button to confirm register").located(By.xpath("//*[@class='btn btn-blue']"));
 

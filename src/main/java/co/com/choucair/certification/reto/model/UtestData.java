@@ -7,8 +7,16 @@ public class UtestData {
     private String strMonthBirth;
     private int intDayBirth;
     private int intYearBirth;
+    private String strLangSpoken;
     private String strCity;
     private String strPostalCode;
+    private String strCountry;
+    private String strComputer;
+    private String strVersion;
+    private String strLanguage;
+    private String strMobile;
+    private String strModel;
+    private String strOS;
     private String strPassword;
     private String strConfirmPassword;
     private String strMessage;
@@ -62,6 +70,14 @@ public class UtestData {
         this.intYearBirth = intYearBirth;
     }
 
+    public String getStrLangSpoken() {
+        return strLangSpoken;
+    }
+
+    public void setStrLangSpoken(String strLangSpoken) {
+        this.strLangSpoken = strLangSpoken;
+    }
+
     public String getStrCity() {
         return strCity;
     }
@@ -76,6 +92,62 @@ public class UtestData {
 
     public void setStrPostalCode(String strPostalCode) {
         this.strPostalCode = strPostalCode;
+    }
+
+    public String getStrCountry() {
+        return strCountry;
+    }
+
+    public void setStrCountry(String strCountry) {
+        this.strCountry = strCountry;
+    }
+
+    public String getStrComputer() {
+        return strComputer;
+    }
+
+    public void setStrComputer(String strComputer) {
+        this.strComputer = strComputer;
+    }
+
+    public String getStrVersion() {
+        return strVersion;
+    }
+
+    public void setStrVersion(String strVersion) {
+        this.strVersion = strVersion;
+    }
+
+    public String getStrLanguage() {
+        return strLanguage;
+    }
+
+    public void setStrLanguage(String strLanguage) {
+        this.strLanguage = strLanguage;
+    }
+
+    public String getStrMobile() {
+        return strMobile;
+    }
+
+    public void setStrMobile(String strMobile) {
+        this.strMobile = strMobile;
+    }
+
+    public String getStrModel() {
+        return strModel;
+    }
+
+    public void setStrModel(String strModel) {
+        this.strModel = strModel;
+    }
+
+    public String getStrOS() {
+        return strOS;
+    }
+
+    public void setStrOS(String strOS) {
+        this.strOS = strOS;
     }
 
     public String getStrPassword() {
